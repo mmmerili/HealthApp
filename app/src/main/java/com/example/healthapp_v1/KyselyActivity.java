@@ -22,11 +22,11 @@ public class KyselyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kysely);
 
-        kysymykset.add("Kysymys1");
-        kysymykset.add("Kysymys2");
-        kysymykset.add("Kysymys3");
-        kysymykset.add("Kysymys4");
-        kysymykset.add("Kysymys5");
+        kysymykset.add("Onko päiväsi sujunut hyvin?");
+        kysymykset.add("Haluatko viettää aikaa yksin?");
+        kysymykset.add("Oletko nukkunut hyvin?");
+        kysymykset.add("Haluatko kuunnella musiikkia?");
+        kysymykset.add("Oletko ulkona?");
 
         TextView kysymys = findViewById(R.id.kysymys);
         kysymys.setText(kysymykset.get(0));
@@ -40,9 +40,9 @@ public class KyselyActivity extends AppCompatActivity {
             if (kysymysNumero == kysymykset.size() - 1) {
                 String vastaus = "Vastaus";
                 if (aktiviteetti1Pisteet > aktiviteetti2Pisteet) {
-                    vastaus = "Vastaus1";
+                    vastaus = "Rentouttavaa joogaa (video löytyy linkistä)";
                 } else if (aktiviteetti2Pisteet > aktiviteetti1Pisteet) {
-                    vastaus = "Vastaus2";
+                    vastaus = "Kävelylenkki, laita soimaan rentouttavaa musiikkia ja keskity maisemiin";
                 }
                 Intent intent = new Intent(this, VastausActivity.class);
                 intent.putExtra(EXTRA_MESSAGE, vastaus);
@@ -56,9 +56,9 @@ public class KyselyActivity extends AppCompatActivity {
             if (kysymysNumero == kysymykset.size() - 1) {
                 String vastaus = "Vastaus";
                 if (aktiviteetti1Pisteet > aktiviteetti2Pisteet) {
-                    vastaus = "Vastaus1";
+                    vastaus = "Ryhmäjumppaa (musiikilla tai ilman)";
                 } else if (aktiviteetti2Pisteet > aktiviteetti1Pisteet) {
-                    vastaus = "Vastaus2";
+                    vastaus = "Rentoutumishetki! keskity hengitykseen ja positiivisiin ajatuksiin";
                 }
                 Intent intent = new Intent(this, VastausActivity.class);
                 intent.putExtra(EXTRA_MESSAGE, vastaus);
